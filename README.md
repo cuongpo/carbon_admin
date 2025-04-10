@@ -1,46 +1,120 @@
-# Getting Started with Create React App
+# Carbon Credit Tokenization Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based dashboard for managing, minting, and trading tokenized carbon credits on blockchain.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The Carbon Credit Tokenization Dashboard is a web application that allows users to create, manage, mint, trade, and redeem tokenized carbon credits. The platform bridges traditional carbon credit registries with blockchain technology, creating a more liquid, transparent, and accessible market for carbon offset trading.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Admin Features
+- Configure carbon credit registry endpoints
+- Create and deploy new carbon credit tokens
+- Manage the whitelist of addresses allowed to mint tokens
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Minter Features
+- Mint new carbon credit tokens against verified carbon credits
+- View mint history and status
 
-### `npm test`
+### Trader Features
+- Swap carbon credit tokens for other cryptocurrencies
+- Redeem carbon credit tokens for the underlying carbon credits
+- View redemption history
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- React.js with TypeScript
+- Tailwind CSS for styling
+- React Router for navigation
+- Ethers.js for Web3 wallet integration
+- Lucide React for icons
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
+- MetaMask or another Web3 wallet browser extension
 
-### `npm run eject`
+### Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/carbon_admin.git
+cd carbon_admin
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Start the development server
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Open [http://localhost:3000](http://localhost:3000) to view the application in your browser.
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Connect your Web3 wallet using the button at the bottom of the sidebar.
+2. Navigate through the different sections using the sidebar navigation.
+3. Admin users can configure registry endpoints, create tokens, and manage whitelists.
+4. Minters can mint new tokens and view mint history.
+5. Traders can swap and redeem tokens.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
+
+```
+carbon_admin/
+├── public/                # Static files
+├── src/                   # Source files
+│   ├── components/        # React components
+│   │   ├── admin/         # Admin section components
+│   │   ├── common/        # Common UI components
+│   │   ├── layout/        # Layout components
+│   │   ├── minter/        # Minter section components
+│   │   └── trader/        # Trader section components
+│   ├── context/           # React context providers
+│   ├── hooks/             # Custom React hooks
+│   ├── pages/             # Page components
+│   ├── App.tsx            # Main App component
+│   └── index.tsx          # Entry point
+├── package.json           # Dependencies and scripts
+└── tailwind.config.js     # Tailwind CSS configuration
+```
+
+## Building for Production
+
+```bash
+npm run build
+```
+
+This creates a `build` directory with a production build of the application.
+
+## Deployment to GitHub Pages
+
+This project is configured for easy deployment to GitHub Pages. Follow these steps to deploy:
+
+1. Update the `homepage` field in `package.json` with your GitHub username:
+```json
+"homepage": "https://YOURUSERNAME.github.io/carbon_admin"
+```
+
+2. Deploy the application to GitHub Pages:
+```bash
+npm run deploy
+```
+
+This will build the application and push it to the `gh-pages` branch of your repository.
+
+3. Alternatively, you can push your changes to the `main` branch, and the GitHub Actions workflow will automatically deploy the application to GitHub Pages.
+
+4. Once deployed, your application will be available at `https://YOURUSERNAME.github.io/carbon_admin`
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
