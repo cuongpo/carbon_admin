@@ -179,7 +179,7 @@ const RegistryEndpoint: React.FC = () => {
             <div className="flex gap-3 mt-6">
               <button 
                 type="submit" 
-                className="kyber-btn kyber-btn-primary"
+                className="kyber-btn"
                 disabled={isLoading}
               >
                 {isLoading ? 'Saving...' : 'Save Configuration'}
@@ -187,7 +187,7 @@ const RegistryEndpoint: React.FC = () => {
               
               <button 
                 type="button" 
-                className="kyber-btn kyber-btn-secondary"
+                className="kyber-btn"
                 onClick={testConnection}
                 disabled={testingConnection || !formData.endpoint || !formData.apiKey || !formData.accountId}
               >
@@ -199,21 +199,21 @@ const RegistryEndpoint: React.FC = () => {
         </div>
       </div>
       
-      <div className="kyber-card">
-        <div className="kyber-card-header">
-          <div className="kyber-card-title">Connection Status</div>
-        </div>
-        
-        <div className="kyber-card-section">
-          {connectionStatus === 'untested' && (
-            <div className="flex items-center justify-center py-8 flex-col">
-              <AlertTriangle size={48} className="text-yellow-400 mb-4" />
-              <div className="text-lg font-medium text-white mb-2">Connection Not Tested</div>
-              <div className="text-sm text-gray-400 mb-4 text-center max-w-md">
-                Please fill in all the required fields and test the connection to ensure your registry is properly configured.
+      <div className="connection-status">
+        {connectionStatus === 'untested' && (
+          <div>
+            <div className="connection-status-header">
+              <div className="connection-status-icon not-tested">
+                <AlertTriangle size={24} />
               </div>
+              <div className="connection-status-title">Connection Not Tested</div>
+            </div>
+            <div className="connection-status-message">
+              Please fill in all the required fields and test the connection to ensure your registry is properly configured.
+            </div>
+            <div className="connection-status-actions">
               <button 
-                className="kyber-btn kyber-btn-secondary"
+                className="kyber-btn"
                 onClick={testConnection}
                 disabled={testingConnection || !formData.endpoint || !formData.apiKey || !formData.accountId}
               >
@@ -221,39 +221,51 @@ const RegistryEndpoint: React.FC = () => {
                 {testingConnection ? 'Testing...' : 'Test Connection'}
               </button>
             </div>
-          )}
-          
-          {connectionStatus === 'success' && (
-            <div className="flex items-center justify-center py-8 flex-col">
-              <CheckCircle size={48} className="text-green-400 mb-4" />
-              <div className="text-lg font-medium text-white mb-2">Connection Successful</div>
-              <div className="text-sm text-gray-400 mb-4 text-center max-w-md">
-                Your registry connection has been successfully established. You can now proceed with token creation and minting operations.
+          </div>
+        )}
+        
+        {connectionStatus === 'success' && (
+          <div>
+            <div className="connection-status-header">
+              <div className="connection-status-icon success">
+                <CheckCircle size={24} />
               </div>
-              <div className="kyber-data-row w-full max-w-md">
+              <div className="connection-status-title">Connection Successful</div>
+            </div>
+            <div className="connection-status-message">
+              Your registry connection has been successfully established. You can now proceed with token creation and minting operations.
+            </div>
+            <div className="kyber-data-grid mt-4 mb-4">
+              <div className="kyber-data-row">
                 <div className="kyber-data-label">Endpoint</div>
                 <div className="kyber-data-value">{formData.endpoint}</div>
               </div>
-              <div className="kyber-data-row w-full max-w-md">
+              <div className="kyber-data-row">
                 <div className="kyber-data-label">Account ID</div>
                 <div className="kyber-data-value">{formData.accountId}</div>
               </div>
-              <div className="kyber-data-row w-full max-w-md">
+              <div className="kyber-data-row">
                 <div className="kyber-data-label">API Version</div>
                 <div className="kyber-data-value">v2.0</div>
               </div>
             </div>
-          )}
-          
-          {connectionStatus === 'failed' && (
-            <div className="flex items-center justify-center py-8 flex-col">
-              <AlertTriangle size={48} className="text-red-400 mb-4" />
-              <div className="text-lg font-medium text-white mb-2">Connection Failed</div>
-              <div className="text-sm text-gray-400 mb-4 text-center max-w-md">
-                Unable to establish a connection to the registry. Please check your configuration details and try again.
+          </div>
+        )}
+        
+        {connectionStatus === 'failed' && (
+          <div>
+            <div className="connection-status-header">
+              <div className="connection-status-icon failed">
+                <AlertTriangle size={24} />
               </div>
+              <div className="connection-status-title">Connection Failed</div>
+            </div>
+            <div className="connection-status-message">
+              Unable to establish a connection to the registry. Please check your configuration details and try again.
+            </div>
+            <div className="connection-status-actions">
               <button 
-                className="kyber-btn kyber-btn-secondary"
+                className="kyber-btn"
                 onClick={testConnection}
                 disabled={testingConnection}
               >
@@ -261,8 +273,8 @@ const RegistryEndpoint: React.FC = () => {
                 {testingConnection ? 'Testing...' : 'Try Again'}
               </button>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );
