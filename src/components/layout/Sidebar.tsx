@@ -10,7 +10,8 @@ import {
   RefreshCw, 
   LogOut, 
   Wallet,
-  Leaf
+  Leaf,
+  Home
 } from 'lucide-react';
 import { useWallet } from '../../context/WalletContext';
 
@@ -66,6 +67,12 @@ const Sidebar: React.FC = () => {
       </div>
       
       <div className="sidebar-content">
+        <NavItem
+          to="/"
+          icon={<Home size={18} />}
+          label="Home"
+        />
+        
         <NavGroup title="Admin">
           <NavItem
             to="/admin/endpoint"

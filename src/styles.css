@@ -1036,12 +1036,12 @@ a:hover {
   font-size: 1.25rem;
   font-weight: 600;
   color: white;
+  margin-bottom: 0.5rem;
 }
 
 .kyber-card-subtitle {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.25rem;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .kyber-card-section {
@@ -1063,6 +1063,15 @@ a:hover {
   font-size: 1rem;
   font-weight: 500;
   color: white;
+}
+
+/* Welcome Text Styles with Improved Contrast */
+.welcome-text {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  font-weight: 400;
 }
 
 /* KyberSwap-inspired Form Elements */
