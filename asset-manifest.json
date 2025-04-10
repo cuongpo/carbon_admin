@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/carbon_admin/static/css/main.10232e11.css",
+    "main.js": "/carbon_admin/static/js/main.47fbc23b.js",
+    "static/js/453.ab02b966.chunk.js": "/carbon_admin/static/js/453.ab02b966.chunk.js",
+    "index.html": "/carbon_admin/index.html",
+    "main.10232e11.css.map": "/carbon_admin/static/css/main.10232e11.css.map",
+    "main.47fbc23b.js.map": "/carbon_admin/static/js/main.47fbc23b.js.map",
+    "453.ab02b966.chunk.js.map": "/carbon_admin/static/js/453.ab02b966.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10232e11.css",
+    "static/js/main.47fbc23b.js"
+  ]
+}
